@@ -17,7 +17,7 @@ if (issue == null){
         g.innerHTML = a;
 
         // テスト依頼ひな型差し込みボタン追加(backlogのjQueryで動作します。)
-        $("ul.js_editor-toolbar li.button-list__item ul").append(`<li class="button-list__item" id="js_insertTestTemplate"><button type="button" class="icon-button icon-button--inverse | simptip-position-top simptip-movable simptip-smooth js_emojiButton" tabindex="-1" data-tooltip="テスト依頼ひな型差し込み" aria-label="絵文字"><svg role="image" class="icon -medium project-nav-list__icon">
+        $("ul.js_editor-toolbar li.comment-editor__tools-left.button-list__item ul").append(`<li class="button-list__item" id="js_insertTestTemplate"><button type="button" class="icon-button icon-button--inverse | simptip-position-top simptip-movable simptip-smooth js_emojiButton" tabindex="-1" data-tooltip="テスト依頼ひな型差し込み" aria-label="絵文字"><svg role="image" class="icon -medium project-nav-list__icon">
             <use xlink:href="/images/svg/sprite.symbol.svg#icon_issues"></use>
         </svg></button></li>`);
         $("#js_insertTestTemplate").on("click", function(e){
