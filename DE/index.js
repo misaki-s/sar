@@ -18,6 +18,7 @@ const changePreset = function(p){
     // ブラウザ再読み込み
     location.reload()
 }
+window.changePreset = changePreset;
 
 // threshold = 100 進捗率100%で処理で更新ボタンを押す
 const startViewer = function (threshold = 100) {
@@ -68,3 +69,4 @@ const startViewer = function (threshold = 100) {
     var i = 1;
     let id = setInterval(fn, tm);
 }
+window.startViewer = startViewer;
