@@ -1,4 +1,4 @@
-// プリセット切り替え
+// デフォルトプリセット切り替え
 const changePreset = function(p){
     const data = {programid:"default",presetid:p}
     fetch("http://localhost:8234/trinity/v1/presets.json", {
@@ -19,6 +19,50 @@ const changePreset = function(p){
     location.reload()
 }
 window.changePreset = changePreset;
+
+// RT解説プリセット切り替え
+const changeRTPreset = function (p) {
+    const data = { programid: "realtime", presetid: p }
+    fetch("http://localhost:8234/trinity/v1/presets.json", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    // ブラウザ再読み込み
+    location.reload()
+}
+window.changeRTPreset = changeRTPreset;
+
+// 気象簡易プリセット切り替え
+const changeKisyoPreset = function (p) {
+    const data = { programid: "kisyo-commentary", presetid: p }
+    fetch("http://localhost:8234/trinity/v1/presets.json", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    // ブラウザ再読み込み
+    location.reload()
+}
+window.changeKisyoPreset = changeKisyoPreset;
 
 // threshold = 100 進捗率100%で処理で更新ボタンを押す
 const startViewer = function (threshold = 100) {
