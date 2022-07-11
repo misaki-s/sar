@@ -12,7 +12,7 @@ if (issue == null) {
             let titleUrl = location.href.split("#")[0];
             let html = g.innerHTML;
             let matches = html.match(/<span(.*)>(.*)<\/span>/);
-            let a = `<span style="font-weight:normal;">[${shortNo}]</span>&nbsp;<a href="${titleUrl}" style="font-weight:normal;" ${matches[1]}">${matches[2]}</a>`;
+            let a = `<span style="font-weight:normal;width: 10em;padding-left: 26px;">[${shortNo}]</span>&nbsp;<a href="${titleUrl}" style="font-weight:normal;" ${matches[1]}">${matches[2]}</a>`;
             g.querySelector('span').remove();
             g.innerHTML = a;
             g.style.display = "inherit";
@@ -39,6 +39,11 @@ if (issue == null) {
 （テスト手順を書く）`.split("\n").map(function (t) { return t.trim(); }).join("</p><p>") + "</p>");
             })
 
+            // 2022/07/11 親子アイコンが追加され、レイアウトが崩れる
+            let mdbody = document.querySelector('.title-group__title .markdown-body');
+            mdbody.style.position = "relative";
+            mdbody.style.display = "inline-block";
+            mdbody.style.width = "100%";
 
             isSuccess = true;
         }
