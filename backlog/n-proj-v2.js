@@ -12,13 +12,13 @@ if (issue == null) {
             let titleUrl = location.href.split("#")[0];
             let html = g.innerHTML;
             let matches = html.match(/<span(.*)>(.*)<\/span>/);
-            let a = `<span style="font-weight:normal;">[${shortNo}]</span>&nbsp;<a href="${titleUrl}" style="font-weight:normal;" ${matches[1]}">${matches[2]}</a>`;
+            let a = `<span style="font-weight:normal;width: 10em;padding-left: 26px;">[${shortNo}]</span>&nbsp;<a href="${titleUrl}" style="font-weight:normal;" ${matches[1]}">${matches[2]}</a>`;
             g.querySelector('span').remove();
             g.innerHTML = a;
             g.style.display = "inherit";
 
             // テスト依頼ひな型差し込みボタン追加(backlogのjQueryで動作します。)
-            $("ul.js_editor-toolbar li.comment-editor__tools-left.button-list__item ul").append(`<li class="button-list__item" id="js_insertTestTemplate"><button type="button" class="icon-button icon-button--inverse | simptip-position-top simptip-movable simptip-smooth js_emojiButton" tabindex="-1" data-tooltip="テスト依頼ひな型差し込み" aria-label="絵文字"><svg role="image" class="icon -medium project-nav-list__icon">
+            $("#expnadableArea li.comment-editor__tools-left.button-list__item > ul").append(`<li class="button-list__item" id="js_insertTestTemplate"><button type="button" class="icon-button icon-button--inverse | simptip-position-top simptip-movable simptip-smooth js_emojiButton" tabindex="-1" data-tooltip="テスト依頼ひな型差し込み" aria-label="絵文字"><svg role="image" class="icon -medium project-nav-list__icon">
             <use xlink:href="/images/svg/sprite.symbol.svg#icon_issues"></use>
         </svg></button></li>`);
             $("#js_insertTestTemplate").on("click", function (e) {
@@ -39,6 +39,11 @@ if (issue == null) {
 （テスト手順を書く）`.split("\n").map(function (t) { return t.trim(); }).join("</p><p>") + "</p>");
             })
 
+            // 2022/07/11 親子アイコンが追加され、レイアウトが崩れる
+            let mdbody = document.querySelector('.title-group__title .markdown-body');
+            mdbody.style.position = "relative";
+            mdbody.style.display = "inline-block";
+            mdbody.style.width = "100%";
 
             // コメントのみを表示
             let btnShowAll = document.querySelector("#comments > div.comment-list-heading > div > dl > dd:nth-child(3) > button");
@@ -52,7 +57,6 @@ if (issue == null) {
             if (toggleState === 'すべて展開') {
                 commentToggle.click();
             }
-
 
             isSuccess = true;
         }
