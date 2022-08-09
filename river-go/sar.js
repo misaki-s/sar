@@ -15,7 +15,7 @@
       `;
       document.body.append(deExt);
   }
-  initPlugin
+  initPlugin();
 
   function updateOBSFullCd(){
       let url = new URL(location.href);
