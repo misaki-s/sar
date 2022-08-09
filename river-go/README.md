@@ -1,4 +1,7 @@
-# ScriptAutoRunnerを使ってhttps://www.river.go.jp/kawabou を拡張します。
+# ScriptAutoRunnerを使って国土交通省/川の防災情報にObsrvtnPointFullCodeを表示させる。
+
+[川の防災情報](https://www.river.go.jp/kawabou
+)
 
 <img width="500" src="rever-go-plugin.png">
 
