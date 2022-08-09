@@ -7,6 +7,8 @@
       deExt.style.position = "absolute";
       deExt.style.bottom = "4px";
       deExt.style.right = "4px";
+      deExt.style.zIndex = 5000;
+      deExt.style.background = "#eef2ff";
       deExt.innerHTML = `
       <div style="border:1px solid #ccc; border-radius:4px; padding:4px;">
           <label for="de-obsrvtnpointfullcode">ObsrvtnPointFullCode</label>:
