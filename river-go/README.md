@@ -2,8 +2,8 @@
 
 <img width="500" src="rever-go-plugin.png">
 
-ScriptAutoRunnerの設定キャプチャ
-<img width="500" src="rever-go-setting.png">
+ScriptAutoRunnerの設定キャプチャ  
+<img width="500" src="rever-go-setup.png">
 
 貼り付け用コード
 
