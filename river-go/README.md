@@ -1,4 +1,4 @@
-# ScriptAutoRunnerを使ってhttps://www.river.go.jp/kawabouを拡張します。
+# ScriptAutoRunnerを使ってhttps://www.river.go.jp/kawabou を拡張します。
 
 貼り付け用コード
 
