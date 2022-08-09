@@ -1,5 +1,10 @@
 # ScriptAutoRunnerを使ってhttps://www.river.go.jp/kawabou を拡張します。
 
+<img width="500" src="rever-go-plugin.png">
+
+ScriptAutoRunnerの設定キャプチャ
+<img width="500" src="rever-go-setting.png">
+
 貼り付け用コード
 
 タイトル:川の防災情報
@@ -12,5 +17,3 @@ function cb(retrievedText){
 }
 ```
 雷雲アイコン（対象ホスト）: www.river.go.jp
-
-
