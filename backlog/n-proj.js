@@ -41,13 +41,33 @@ if (issue == null) {
 
 （テスト手順を書く）
 `.split("\n").map(function (t) { return t.trim(); }).join("</p><p>") + "</p>");
-            })
+
+            let s = document.querySelector('#SingleSelect_1');
+            s.style = "animation: status-blink-select 1.0s linear infinite normal;";
+            });
 
             // 2022/07/11 親子アイコンが追加され、レイアウトが崩れる
             let mdbody = document.querySelector('.title-group__title .markdown-body');
             mdbody.style.position = "relative";
             mdbody.style.display = "inline-block";
             mdbody.style.width = "100%";
+
+            // アニメーションキーフレームを追加
+            let h = document.querySelector('#binding-survey');
+            let styleEl = document.createElement("style");
+            h.appendChild(styleEl);
+            styleEl.sheet.insertRule(`
+@keyframes status-blink-select{
+    0% {
+    box-shadow:0px 0px 20px -4px rgba(239,64,87,0);
+}
+    50% {
+    box-shadow:0px 0px 20px -4px rgba(239,64,87.5);
+}
+    100% {
+    box-shadow:0px 0px 20px -4px rgba(239,64,87,0);
+}
+}`, 0);
 
             isSuccess = true;
         }
