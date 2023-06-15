@@ -93,10 +93,13 @@ if (issue == null) {
 
     // 完了ステータスはステータスを変更不可にする。
     // https://digirea-de.slack.com/archives/CCPUG1AAX/p1686814130553179
-    var statusEl = document.querySelector("[aria-labelledby=\"statusLabel\"] .chzn--icon-text");
-    var statusBtn = statusEl.closest('button');
-    if(statusEl.innerText === '完了'){
-        statusBtn.style.opacity = "0.2"
-        statusBtn.addEventListener('click', (e) => e.stopPropagation());
-    }
+    setTimeout(function(){
+        let statusEl = document.querySelector("[aria-labelledby=\"statusLabel\"] .chzn--icon-text");
+        let statusBtn = statusEl.closest('button');
+        if(statusEl.innerText === '完了'){
+            statusBtn.style.opacity = "0.2"
+            statusBtn.addEventListener('click', (e) => e.stopPropagation());
+        }
+    }, 1000);
+
 }
